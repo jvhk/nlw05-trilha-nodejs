@@ -26,6 +26,12 @@ class UserService{
         //E aqui retorna o user que foi adicionado ou que já existia
         return user;
     }
+
+    async findByEmail(email: string) {
+        const user = await this.usersRepository.findOne({ email });
+    
+        return user;
+    }
 }
 
 export {UserService};
